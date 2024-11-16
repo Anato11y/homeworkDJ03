@@ -6,7 +6,7 @@
 
 {% block content %}
 <h1>Список новостей</h1>
-
+{% if news %}
 {% for new in news %}
     <div class="card mb-3">
         <div class="card-body">
@@ -20,5 +20,7 @@
         </div>
     </div>
 {% endfor %}
-
+{% else %}
+		<h4>Новостей ещё нет.</h4>
+{% endif %}
 {% endblock %}

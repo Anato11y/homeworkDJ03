@@ -1,0 +1,14 @@
+{% extends 'main/layoute.html' %}
+
+{% block title %}
+    <title>Добавить новость</title>
+{% endblock %}
+
+{% block content %}
+<h1>Добавить новость</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Добавить</button>
+</form>
+{% endblock %}
