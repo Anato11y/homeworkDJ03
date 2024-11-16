@@ -1,0 +1,24 @@
+{% extends 'main/layoute.html' %}
+
+{% block title %}
+    <title>Новости</title>
+{% endblock %}
+
+{% block content %}
+<h1>Список новостей</h1>
+
+{% for new in news %}
+    <div class="card mb-3">
+        <div class="card-body">
+            <h3 class="card-title">{{ new.title }}</h3>
+            <p class="card-text"><strong>Описание:</strong> {{ new.short_description }}</p>
+            <p class="card-text"><strong>Текст:</strong> {{ new.text }}</p>
+            <p class="text-muted">
+                <strong>Автор:</strong> {{ new.author.username }} |
+                <strong>Дата публикации:</strong> {{ new.pub_date }}
+            </p>
+        </div>
+    </div>
+{% endfor %}
+
+{% endblock %}
